@@ -6,8 +6,6 @@ function setup() {
     pixelDensity(1);
     minSlider = createSlider(-2.5, 0, -2.5, 0.01);
     maxSlider = createSlider(0, 2.5, 2.5, 0.01);
-
-
 }
 
 function draw() {
@@ -46,8 +44,6 @@ function draw() {
             pixels[pix + 1] = bright;
             pixels[pix + 2] = bright;
             pixels[pix + 3] = 255;
-
-
         }
     }
 

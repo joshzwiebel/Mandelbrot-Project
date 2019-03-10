@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/Mandelbrot.jpg);
+    height: 20cm;
+
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.main-nav li {
+    display: inline-block;
+}
+
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 50px;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+body {
+    font-family: Impact;
+}
+
+.row {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.intro {
+    position: absolute;
+    width: 1200px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 45px;
+    text-align: center;
+    margin-top: 250px;
+}
+
+.nav {
+    text-align: center;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 100px;
+    font-family: Arial;
+    font-size: 25px;
+}
+
+.nav li a:hover {
+    border: 1px solid;
+}
