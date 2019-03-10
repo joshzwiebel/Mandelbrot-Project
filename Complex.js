@@ -1,5 +1,3 @@
-
-
 class Complex {
     constructor(real_, imaginary_) {
         this.real = real_ || 0;
@@ -20,8 +18,8 @@ class Complex {
     }
 
     mult(num) {
-        this.real = this.real*num.real - this.imaginary*num.imaginary;
-        this.imaginary = this.real*num.imaginary+this.imaginary*this.real;
+        this.real = this.real * num.real - this.imaginary * num.imaginary;
+        this.imaginary = this.real * num.imaginary + this.imaginary * this.real;
         return this;
     }
 
@@ -33,13 +31,18 @@ class Complex {
         return '' + this.real + '+' + this.imaginary + 'i';
     }
 
-    exp(num){
-        var mag = Math.sqrt(this.real**2+this.imaginary**2);
-        var theta = Math.atan2(this.imaginary,this.real);
-        this.real = (mag**num)*Math.cos(theta*num);
-        this.imaginary = (mag**num)*Math.sin(theta*num);
+    exp(num) {
+        var mag = Math.sqrt(this.real ** 2 + this.imaginary ** 2);
+        var theta = Math.atan2(this.imaginary, this.real);
+        this.real = (mag ** num) * Math.cos(theta * num);
+        this.imaginary = (mag ** num) * Math.sin(theta * num);
     }
-};
+
+    abs(num) {
+        return Math.sqrt(this.real ** 2 + this.imaginary ** 2);
+    }
+}
+
 var a = new Complex(4, 2);
 a.exp(3.5);
 console.log(a.display_complex());
