@@ -52,6 +52,7 @@ function draw() {
     }
 
 
+
     updatePixels();
 
 }
