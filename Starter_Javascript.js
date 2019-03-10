@@ -4,10 +4,8 @@ var maxSlider;
 function setup() {
     createCanvas(360, 360);
     pixelDensity(1);
-    minSlider = createSlider(-2.5, 0, -2.5, 0.01);
-    maxSlider = createSlider(0, 2.5, 2.5, 0.01);
-
-
+    minSlider = createSlider(-1.5, 0, -1.5, 0.01);
+    maxSlider = createSlider(0, 1.5, 1.5, 0.01);
 }
 
 function draw() {
@@ -50,8 +48,5 @@ function draw() {
 
         }
     }
-
-
     updatePixels();
-
 }
