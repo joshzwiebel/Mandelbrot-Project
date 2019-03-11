@@ -16,7 +16,7 @@ function setup() {
 }
 
 
-function doit() {
+function display() {
     loadPixels();
 
 
