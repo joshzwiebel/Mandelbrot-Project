@@ -4,7 +4,6 @@ class Complex {
         this.imaginary = imaginary_ || 0;
     }
 
-
     add(num) {
         this.real += num.real;
         this.imaginary += num.imaginary;
@@ -19,10 +18,9 @@ class Complex {
 
     mult(num) {
         this.real = this.real * num.real - this.imaginary * num.imaginary;
-        this.imaginary = this.real * num.imaginary + this.imaginary * this.real;
+        this.imaginary = this.real * num.imaginary + this.imaginary * num.real;
         return this;
     }
-
 
     display_complex() {
         if (this.imaginary === '0') return '' + this.real;
@@ -32,8 +30,8 @@ class Complex {
     }
 
     exp(num) {
-        var mag = Math.sqrt(this.real ** 2 + this.imaginary ** 2);
-        var theta = Math.atan2(this.imaginary, this.real);
+        let mag = Math.sqrt(this.real ** 2 + this.imaginary ** 2);
+        let theta = Math.atan2(this.imaginary, this.real);
         this.real = (mag ** num) * Math.cos(theta * num);
         this.imaginary = (mag ** num) * Math.sin(theta * num);
     }
@@ -46,5 +44,3 @@ class Complex {
 var a = new Complex(4, 2);
 a.exp(3.5);
 console.log(a.display_complex());
-
-
