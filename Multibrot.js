@@ -2,8 +2,9 @@
 var minSlider;
 var maxSlider;
 
-var expbutton = document.getElementById("expform");
-exponent = expbutton.value();
+
+
+
 function setup() {
     createCanvas(360, 360);
     pixelDensity(1);
@@ -12,30 +13,46 @@ function setup() {
 
 
 
-
 }
 
-function draw() {
+
+function doit() {
     loadPixels();
+
+
 
     for (var x = 0; x < width; x++) {
         for (var y = 0; y < height; y++) {
-            var current_real = map(x, 0, width, minSlider.value(), maxSlider.value());
-            var current_imag = map(y, 0, height, minSlider.value(), maxSlider.value());
-            var num = new Complex(current_real, current_imag);
+            let current_real = map(x, 0, width, minSlider.value(), maxSlider.value());
+            let current_imag = map(y, 0, height, minSlider.value(), maxSlider.value());
+
+
+
+
+
+            var  num =  new Complex(current_real, current_imag);
+
+
 
             /*var a = map(x, 0, width, -2.5, 2.5);
             var b = map(y, 0, height, -2.5, 2.5);*/
-            var n = 0;
-            var starting_real = current_real;
-            var starting_imag = current_imag;
+            let n = 0;
+            let starting_imag = current_imag;
+            let starting_real = current_real;
+            var expbutton = document.getElementById("userInput");
+            var exponent = expbutton.value;
+
+
+
 
 
             while (n < 10) {
 
                 num.exp(exponent);
 
-                //num.display_complex();
+
+                num.display_complex();
+
                 num.real += starting_real;
 
                 num.imaginary += starting_imag;
@@ -55,7 +72,6 @@ function draw() {
             }
 
 
-
             var pix = (x + y * width) * 4;
             pixels[pix] = bright;
             pixels[pix + 1] = bright;
@@ -68,5 +84,6 @@ function draw() {
 
 
     updatePixels();
+    //noLoop();
 
 }
