@@ -46,8 +46,7 @@ function draw() {
 
     // if cursor out of bound, use default
     if (cx2 < -2.5 || cx2 > 1.5 || cy2 < -2 || cy2 > 2) {
-        cx2 = 0;
-        cy2 = -0.8;
+        cx2 = cy2 = 0;
     }
 
 
@@ -57,7 +56,7 @@ function draw() {
             let b = map(y, 0, height, -2, 2);
             let n = 0;
 
-            while (n < 50) {
+            while (n < 100) {
                 if (a * a + b * b > 4)    // abs() is not needed since both positive
                     break;
                 let twoAb = 2 * a * b;

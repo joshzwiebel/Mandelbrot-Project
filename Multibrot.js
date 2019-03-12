@@ -1,64 +1,87 @@
-var minSlider;
-var maxSlider;
-
-
 function setup() {
-    createCanvas(360, 360);
+    createCanvas(800, 400);
     pixelDensity(1);
-    minSlider = createSlider(-2.5, 0, -2.5, 0.5);
-    maxSlider = createSlider(0, 2.5, 2.5, 0.5);
 }
 
-
-function display() {
+// change back to display
+function draw() {
     loadPixels();
 
-    for (var x = 0; x < width; x++) {
-        for (var y = 0; y < height; y++) {
-            let current_real = map(x, 0, width, minSlider.value(), maxSlider.value());
-            let current_imag = map(y, 0, height, minSlider.value(), maxSlider.value());
+    let expbutton = document.getElementById("userInput");
+    let exponent = expbutton.value;
 
-            var num = new Complex(current_real, current_imag);
+    for (let x = 0; x < width / 2; x++) {
+        for (let y = 0; y < height; y++) {
 
-            /*var a = map(x, 0, width, -2.5, 2.5);
-            var b = map(y, 0, height, -2.5, 2.5);*/
-            let n = 0;
+            let current_real = map(x, 0, width / 2, -2, 2);
+            let current_imag = map(y, 0, height, -2, 2);
+            let num = new Complex(current_real, current_imag);
             let starting_imag = current_imag;
             let starting_real = current_real;
-            var expbutton = document.getElementById("userInput");
-            var exponent = expbutton.value;
+            let n = 0;
 
-            while (n < 10) {
-
+            while (n < 20) {
                 num.exp(exponent);
-
-                num.display_complex();
-
+                // num.display_complex();
                 num.real += starting_real;
-
                 num.imaginary += starting_imag;
-
-                if (num.abs() > 16) {
+                if (num.abs() > 4)
                     break;
-                }
-
                 n++;
             }
 
-            var bright = map(n, 0, 50, 0, 1);
-            bright = map(Math.sqrt(bright), 0, 1, 0, 255);
-            if (n === 10) {
-                bright = 0;
+            let pix = (x + y * width) * 4;
+            if (n > 10) {
+                pixels[pix + 0] = 0;
+                pixels[pix + 1] = 0;
+                pixels[pix + 2] = 0;
+                pixels[pix + 3] = 255;
+            } else {
+                pixels[pix + 0] = 0;
+                pixels[pix + 1] = n * 20;
+                pixels[pix + 2] = 0;
+                pixels[pix + 3] = 255;
             }
-
-            var pix = (x + y * width) * 4;
-            pixels[pix] = bright;
-            pixels[pix + 1] = bright;
-            pixels[pix + 2] = bright;
-            pixels[pix + 3] = 255;
         }
     }
 
+
+    for (let x = 0; x < width / 2; x++) {
+        for (let y = 0; y < height; y++) {
+            let current_real = map(x, 0, width / 2, -2, 2);
+            let current_imag = map(y, 0, height, -2, 2);
+            let num = new Complex(current_real, current_imag);
+            let n = 0;
+
+            let cx = map(mouseX, 0, width / 2, -2, 2);
+            let cy = map(mouseY, 0, height, -2, 2);
+            if (cx > 2 || cx < -2 ||cy > 2 || cy < -2 ){
+                cx = cy = 0;
+            }
+
+            while (n < 20) {
+                if (num.abs() > 4)
+                    break;
+                num.exp(exponent);
+                // num.display_complex();
+                num.real += cx;
+                num.imaginary += cy;
+                n++;
+            }
+
+            let pix = ((x + width / 2) + y * width) * 4;
+            if (n > 10) {
+                pixels[pix + 0] = 0;
+                pixels[pix + 1] = 0;
+                pixels[pix + 2] = 0;
+                pixels[pix + 3] = 255;
+            } else {
+                pixels[pix + 0] = 0;
+                pixels[pix + 1] = n * 20;
+                pixels[pix + 2] = 0;
+                pixels[pix + 3] = 255;
+            }
+        }
+    }
     updatePixels();
-    //noLoop();
 }
