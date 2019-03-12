@@ -1,8 +1,5 @@
-
 var minSlider;
 var maxSlider;
-
-
 
 
 function setup() {
@@ -12,13 +9,11 @@ function setup() {
     maxSlider = createSlider(0, 2.5, 2.5, 0.5);
 
 
-
 }
 
 
 function display() {
     loadPixels();
-
 
 
     for (var x = 0; x < width; x++) {
@@ -27,11 +22,7 @@ function display() {
             let current_imag = map(y, 0, height, minSlider.value(), maxSlider.value());
 
 
-
-
-
-            var  num =  new Complex(current_real, current_imag);
-
+            var num = new Complex(current_real, current_imag);
 
 
             /*var a = map(x, 0, width, -2.5, 2.5);
@@ -41,9 +32,6 @@ function display() {
             let starting_real = current_real;
             var expbutton = document.getElementById("userInput");
             var exponent = expbutton.value;
-
-
-
 
 
             while (n < 10) {
