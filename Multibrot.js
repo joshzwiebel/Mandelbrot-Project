@@ -1,6 +1,10 @@
 var minSlider;
 var maxSlider;
 
+var initX = 0;
+var inity = 0;
+var finx=0;
+var finy = 0;
 
 function setup() {
     createCanvas(360, 360);
@@ -9,6 +13,31 @@ function setup() {
     maxSlider = createSlider(0, 2.5, 2.5, 0.5);
 
 
+}
+//todo add window scaling function on mouse click and release. have it update as the user grags. use the map function to get correct bounds, work on it
+function draw(){
+    stroke(0);
+    strokeWeight(5);
+    noFill();
+
+    rect(initX,inity,finx-initX,finy-inity);
+
+
+    //rect(initX,inity,mouseX-initX,mouseY-inity);
+
+    //rect(initX, inity, mouseY-inity,mouseX-initX);
+    noLoop()
+}
+
+
+function mousePressed(){
+    initX=mouseX;
+    inity = mouseY;
+}
+function mouseReleased(){
+    finx=mouseX;
+    finy = mouseY;
+    draw();
 }
 
 
