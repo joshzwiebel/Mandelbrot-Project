@@ -3,8 +3,6 @@ This projects aims to create a webpage that will allow for a dynamic viewing of 
 
 This project started in early March and is on-going due to its relatively broad scope (web languages and mathematical algorithms).
 
-<b>Note that this is a collaborated project with joshz123. This repository is created with a copy of all the files for people to check out</b>
-
 # Goals of the project
 1. Create a dynamic Mandelbrot viewer
 2. Extend the functionality to the filled Julia Sets (animated)
