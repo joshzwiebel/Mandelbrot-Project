@@ -43,8 +43,6 @@ class Complex {
     }
 }
 
-var a = new Complex(4, 2);
-a.exp(3.5);
-console.log(a.display_complex());
+
 
 
