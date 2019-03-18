@@ -33,10 +33,10 @@ function mouseReleased() {
 }
 
 
-function draw() {
+function display() {
     loadPixels();
-    minvalx = map(mouseX, 0, width, -2, 2);
-    maxvalx =map(mouseY, 0, width, -2, 2);
+    minvalx = map(initX, 0, width, -2, 2);
+    maxvalx =map(inity, 0, height, -2, 2);
 
 
 
