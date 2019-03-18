@@ -9,9 +9,6 @@ var finy = 360;
 function setup() {
     createCanvas(360, 360);
     pixelDensity(1);
-
-
-
 }
 //todo add window scaling function on mouse click and release. have it update as the user grags. use the map function to get correct bounds, work on it
 
@@ -36,7 +33,7 @@ function mouseReleased() {
 function draw() {
     loadPixels();
     minvalx = map(mouseX, 0, width, -2, 2);
-    maxvalx =map(mouseY, 0, width, -2, 2);
+    maxvalx =map(mouseY, 0, height, -2, 2);
 
 
 
