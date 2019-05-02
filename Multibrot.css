@@ -2,3 +2,13 @@
     background-color: crimson ;
     text-align: center;
 }
+#BLURB{
+    text-align: center;
+    float: left;
+}
+#DisplayWindow{
+    float: right;
+}
+#BUTTON{
+    float:right;
+}
