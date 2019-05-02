@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multibrot</title>
+    <li><a href="index.html">Home</a></li>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+<body>
+<div ID="TITLE">
+    <H1> The Mandelbrot and Multibrot Sets</H1>
+</div>
+
+<div id="BLURB">
+    <H3> The Mandelbrot set is created by iterating infinitely the function $f(z) = z^2 + c$  ( $z_o=0$) for different values of c and checking for convergence. If a complex number $c$ converges under these conditions it is considered to be within the Mandelbrot set.
+    However a generalization of the Mandelbrot set exists called the Multibrot set where instead the function is $f(z) = z^d+c$. This page allows you to view
+    how the plot changes for different $d$ values and explore the Multibrot set.</H3>
+</div>
+<div id="Options">
+    <h6> This is where options are going to be going</h6>
+
+
+</div>
+<div id="DisplayWindow">
+
+<script type="text/javascript" src="LibrariesandGlobals/Complex.js"></script>
+<script type="text/javascript" src="LibrariesandGlobals/HSVtoRGB.js"></script>
+<script type="text/javascript" src="Multibrot.js"></script>
+<link href="Multibrot.css" rel="stylesheet" type="text/css">
+<script src="LibrariesandGlobals/p5.js"></script>
+<script src="LibrariesandGlobals/p5.dom.js"></script>
+
+</div>
+<div id="BUTTON">    <input type="text" id="userInput" autofocus value=""/>
+    <input type="submit" value="Submit" onclick="display()"/>
+</div>
+</body>
+</html>
+
+<!-- this page is about letting the user adjust the d value and see different sets
+in the Multibrot family. Parameters for the calculation should be variable and window scaling
+should be implemented to allow user zoom-->
